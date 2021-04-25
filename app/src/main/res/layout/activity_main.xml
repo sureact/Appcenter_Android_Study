@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id = "@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INU_Login"
@@ -19,11 +20,29 @@
         />
 
     <Button
-        android:layout_marginTop="200dp"
+        android:id = "@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
         android:padding="16dp"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_text_background"
+        android:text = "닉네임"
+        android:textSize = "15sp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        />
+    <Button
+        android:id = "@+id/password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        android:layout_marginTop="0dp"
+        android:padding="16dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:background="@drawable/edit_text_background"
         android:text = "닉네임"
         android:textSize = "15sp"
