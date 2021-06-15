@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"아이디 혹은 비밀번호를 입력하세요!",Toast.LENGTH_SHORT).show()
             }
             else if (id.isEmpty()){
-                //심화과제부분
+
             }
             else if (pw.isEmpty()){
                 //심화과제부분
