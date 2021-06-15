@@ -1,5 +1,6 @@
 package org.sumin.appcenterandroidstudy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,26 +8,26 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import org.sumin.appcenterandroidstudy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.btn_login).setOnClickListener{
+        binding.btnLogin.setOnClickListener {
             val id = findViewById<EditText>(R.id.name).text.toString()
             val pw = findViewById<EditText>(R.id.password).text.toString()
             if(id.isEmpty() || pw.isEmpty()){
                 Toast.makeText(this,"아이디 혹은 비밀번호를 입력하세요!",Toast.LENGTH_SHORT).show()
             }
-            else if (id.isEmpty()){
-
-            }
-            else if (pw.isEmpty()){
-                //심화과제부분
-            }
             else{
-                findViewById<TextView>(R.id.error).visibility= View.VISIBLE
+                binding.error.visibility = View.VISIBLE
+                val intent = Intent(this,SubActivity::class.java)
+                startActivity(intent)
             }
         }
     }

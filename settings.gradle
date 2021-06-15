@@ -1,4 +1,3 @@
-include ':gitHub_API'
 include ':layoutpractice'
 include ':app'
 rootProject.name = "Appcenter Android Study"

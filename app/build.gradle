@@ -4,6 +4,11 @@ plugins {
 }
 
 android {
+    //뷰 바인딩 설정
+    buildFeatures{
+        viewBinding true
+    }
+
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
