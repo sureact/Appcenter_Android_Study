@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
             val id = findViewById<EditText>(R.id.name).text.toString()
@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
             else{
                 binding.error.visibility = View.VISIBLE
                 val intent = Intent(this,SubActivity::class.java)
-                startActivity(intent)
+                val idText = binding.name.text.toString()
+                intent.putExtra("id",idText)        //intent객체에 데이터를 저장
+                startActivity(intent)       //서브엑티비티 실행
             }
         }
     }
